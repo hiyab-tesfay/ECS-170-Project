@@ -1,0 +1,43 @@
+{
+  "dataset": "Stage 2 digits, supplied 60,000/10,000 train/test split",
+  "feature_scaling": "pixel value / 255",
+  "initialization": "Xavier uniform weights and zero biases",
+  "activation": "ReLU after each hidden layer; raw output logits",
+  "loss": "CrossEntropyLoss",
+  "optimizer": "Adam",
+  "epochs": 10,
+  "batch_size": 256,
+  "learning_rate": 0.001,
+  "seed": 42,
+  "device": "cpu",
+  "metric_average": "macro across labels 0-9; zero_division=0",
+  "models": {
+    "baseline": {
+      "architecture": [
+        784,
+        128,
+        64,
+        10
+      ],
+      "parameter_count": 109386,
+      "accuracy": 0.9789,
+      "precision_macro": 0.9788832818686641,
+      "recall_macro": 0.9786332143309963,
+      "f1_macro": 0.978739282041612,
+      "final_training_loss": 0.028823160471518835
+    },
+    "one_hidden_layer": {
+      "architecture": [
+        784,
+        128,
+        10
+      ],
+      "parameter_count": 101770,
+      "accuracy": 0.9757,
+      "precision_macro": 0.9756471617329012,
+      "recall_macro": 0.9755024622884786,
+      "f1_macro": 0.9755556047250937,
+      "final_training_loss": 0.04812234794596831
+    }
+  }
+}

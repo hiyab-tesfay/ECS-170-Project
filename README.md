@@ -14,8 +14,8 @@ script/stage_1_script/     Stage 1 executable scripts
 stage_2_data/              Stage 2 instructions and CSV datasets
 ```
 
-Stages 2 through 5 currently have package placeholders under `local_code/`, but
-only Stage 1 has executable model code.
+Stages 3 through 5 currently have package placeholders under `local_code/`.
+Stages 1 and 2 have executable model code.
 
 ## Requirements
 
@@ -130,7 +130,25 @@ CSV rows, install Git LFS and run:
 git lfs pull
 ```
 
-There is not yet a Stage 2 training script in the repository.
+## Run Stage 2
+
+From the repository root, activate the virtual environment and run:
+
+```bash
+source .venv/bin/activate
+python script/stage_2_script/script_mlp.py
+```
+
+The script loads the supplied 60,000-row training split and 10,000-row test
+split. It trains a `784 -> 128 -> 64 -> 10` MLP and a one-hidden-layer
+`784 -> 128 -> 10` comparison using the same training settings. It reports test
+accuracy, macro precision, macro recall, and macro F1 score. It saves
+`metrics.json`, `loss_history.csv`, and `training_loss.svg` under
+`result/stage_2_result/` for the project report.
+
+The defaults are 10 epochs, batch size 256, Adam learning rate 0.001, and random
+seed 42. Use `python script/stage_2_script/script_mlp.py --help` to see the
+available settings.
 
 ## Result-file safety
 

@@ -1,0 +1,45 @@
+ECS 170 Project - Stage 2 Report
+
+Section 1: Task Description
+
+This project classifies digit images into one of ten classes, 0 through 9. Each example contains 784 pixel values and its correct digit label. A multi-layer perceptron (MLP) is trained on the supplied training set and evaluated on the separate test set.
+
+Section 2: Model Description
+
+The baseline MLP has an input layer with 784 units, a first hidden layer with 128 units, a second hidden layer with 64 units, and an output layer with 10 units. ReLU follows each hidden layer. The output layer produces ten raw scores, one per digit. The predicted class is the digit with the highest score. Cross-entropy loss uses the raw scores during training.
+
+Architecture: 784 inputs -> 128 ReLU units -> 64 ReLU units -> 10 output scores -> predicted digit.
+
+Section 3: Experiment Settings
+
+3.1 Dataset Description
+
+The project provides one dataset, already divided into train.csv and test.csv. The training file contains 60,000 examples, and the test file contains 10,000. Each row has 785 comma-separated integers with no header. The first number is a label from 0 to 9; the other 784 numbers are pixel values from 0 to 255. All ten classes appear in both files. Pixel values are divided by 255 to put features between 0 and 1. The supplied training and test partition is kept unchanged. The test set is used for evaluation after training, not for fitting the model.
+
+3.2 Detailed Experimental Setups
+
+The baseline architecture is 784 -> 128 -> 64 -> 10, with 109,386 trainable parameters. The comparison model for the ablation study is 784 -> 128 -> 10, with 101,770 trainable parameters. Both models use Xavier uniform weight initialization, zero biases, ReLU hidden activations, and cross-entropy loss. Both are trained for 10 epochs with mini-batches of 256, the Adam optimizer, and a learning rate of 0.001. The random seed is 42 for Python, NumPy, and PyTorch. Training was run on the CPU. The dataset, preprocessing, and all training settings are the same for both models; only the second hidden layer is removed in the comparison model. No additional dataset or validation partition was used.
+
+3.3 Evaluation Metrics
+
+Accuracy is the number of correct test predictions divided by the total number of test examples. For each digit class, precision is true positives divided by true positives plus false positives. Recall is true positives divided by true positives plus false negatives. F1 is the harmonic mean of precision and recall. Precision, recall, and F1 are reported as macro averages: each class is scored separately, and the ten class scores are averaged equally. A score is set to zero when its denominator is zero.
+
+3.4 Source Code
+
+The intended source-code link is https://github.com/hiyab-tesfay/ECS-170-Project . The Stage 2 files are local_code/stage_2_code/Dataset_Loader.py, local_code/stage_2_code/Method_MLP.py, and script/stage_2_script/script_mlp.py. Run the training script from the repository root with the project virtual environment active: python script/stage_2_script/script_mlp.py . The current Stage 2 changes must be uploaded and the link checked before submitting this report.
+
+3.5 Training Convergence Plot
+
+Mean training loss decreased during every epoch for both models. The baseline went from 0.4211 in epoch 1 to 0.0288 in epoch 10. The one-hidden-layer model went from 0.4344 to 0.0481. These results show steady learning over the observed ten epochs, although they do not establish a final loss plateau. The ready-made plot is saved at result/stage_2_result/training_loss.svg .
+
+Epoch                 1       2       3       4       5       6       7       8       9      10
+Baseline loss      0.4211  0.1587  0.1152  0.0880  0.0715  0.0593  0.0493  0.0412  0.0332  0.0288
+Ablation loss      0.4344  0.2074  0.1558  0.1229  0.1011  0.0849  0.0732  0.0631  0.0545  0.0481
+
+3.6 Model Performance
+
+After ten epochs, the baseline correctly classified 9,789 of the 10,000 test examples. Its test accuracy was 97.89%, macro precision was 97.89%, macro recall was 97.86%, and macro F1 was 97.87%.
+
+3.7 Ablation Studies
+
+The ablation removes the 64-unit second hidden layer while keeping the other settings fixed. The one-hidden-layer model achieved 97.57% test accuracy, 97.56% macro precision, 97.55% macro recall, and 97.56% macro F1. The two-hidden-layer baseline was higher by 0.32 percentage points in accuracy, or 32 additional correct test predictions. This comparison is based on one seeded run per architecture; it does not measure the average difference over repeated runs.
