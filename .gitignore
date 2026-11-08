@@ -2,3 +2,8 @@
 .DS_Store
 __pycache__/
 *.pyc
+stage_3_data/MNIST
+stage_3_data/ORL
+stage_3_data/CIFAR
+result/stage_3_result/checkpoints/
+result/stage_3_result/**/*.pt

@@ -155,3 +155,32 @@ available settings.
 Stage 1 results are serialized with Python `pickle`. Only load result files from
 this repository or another trusted source, because untrusted pickle files can
 execute arbitrary code when loaded.
+
+## Run Stage 3 CNN experiments
+
+Use Python 3.11 and install `requirements.txt`. Download the instructor's Stage 3
+archive and extract `MNIST`, `ORL`, and `CIFAR` into `stage_3_data/` if those files
+are absent. They are intentionally excluded from Git because of their size.
+Only load these pickle files from a trusted source.
+
+From the repository root:
+
+```bash
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python script/stage_3_script/script_cnn.py --dataset all
+```
+
+Use `--dataset MNIST`, `ORL`, or `CIFAR` to run one dataset. The script runs a
+baseline and two controlled ablations for each dataset. It holds out a fixed,
+stratified 10% of the supplied training split for checkpoint selection; the
+instructor's test split is used only for final evaluation. It writes metrics,
+predictions, model weights, loss histories, and learning-curve PNGs under
+`result/stage_3_result/<dataset>/`. Options include `--epochs`, `--patience`,
+`--seed`, `--learning-rate`, and `--device auto|cpu|cuda|mps`.
+Use `--variant baseline` to run just one configuration.
+Single-variant runs write to a `single_<variant>/` subfolder so they do not
+replace the complete comparison files.
+
+The default epoch caps are 10 for MNIST, 35 for ORL, and 10 for CIFAR, with
+early stopping after five epochs without validation-loss improvement. CPU runs,
+especially CIFAR, can take substantial time. For a quick execution check, run
+`--dataset ORL --epochs 1 --output-dir /tmp/stage3_smoke`.
