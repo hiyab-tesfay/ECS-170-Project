@@ -184,3 +184,12 @@ The default epoch caps are 10 for MNIST, 35 for ORL, and 10 for CIFAR, with
 early stopping after five epochs without validation-loss improvement. CPU runs,
 especially CIFAR, can take substantial time. For a quick execution check, run
 `--dataset ORL --epochs 1 --output-dir /tmp/stage3_smoke`.
+
+### Optional device comparison
+
+Run `python script/stage_3_script/benchmark_device.py` to time the same MNIST
+baseline training batches on CPU and an available CUDA or MPS device. The script
+records throughput and, when a GPU is available, its speedup in
+`result/stage_3_result/device_benchmark.json`. If neither GPU backend is
+available, it records that fact and a CPU timing. This short benchmark does not
+replace the full test-set evaluations above.
