@@ -1,0 +1,68 @@
+[
+  {
+    "cell": "rnn",
+    "device": "cpu",
+    "seconds_per_training_batch": 0.0632672084029764,
+    "batch_size": 64,
+    "sequence_length": 240,
+    "timed_batches": 5,
+    "warmup_batches": 2,
+    "threads": 2,
+    "padded_sequences": true
+  },
+  {
+    "cell": "rnn",
+    "device": "mps",
+    "seconds_per_training_batch": 0.27439672499895096,
+    "batch_size": 64,
+    "sequence_length": 240,
+    "timed_batches": 5,
+    "warmup_batches": 2,
+    "threads": 2,
+    "padded_sequences": true
+  },
+  {
+    "cell": "lstm",
+    "device": "cpu",
+    "seconds_per_training_batch": 0.15241162499878555,
+    "batch_size": 64,
+    "sequence_length": 240,
+    "timed_batches": 5,
+    "warmup_batches": 2,
+    "threads": 2,
+    "padded_sequences": true
+  },
+  {
+    "cell": "lstm",
+    "device": "mps",
+    "seconds_per_training_batch": 0.06226299999980256,
+    "batch_size": 64,
+    "sequence_length": 240,
+    "timed_batches": 5,
+    "warmup_batches": 2,
+    "threads": 2,
+    "padded_sequences": true
+  },
+  {
+    "cell": "gru",
+    "device": "cpu",
+    "seconds_per_training_batch": 0.14520967499702236,
+    "batch_size": 64,
+    "sequence_length": 240,
+    "timed_batches": 5,
+    "warmup_batches": 2,
+    "threads": 2,
+    "padded_sequences": true
+  },
+  {
+    "cell": "gru",
+    "device": "mps",
+    "seconds_per_training_batch": 0.6298405834008008,
+    "batch_size": 64,
+    "sequence_length": 240,
+    "timed_batches": 5,
+    "warmup_batches": 2,
+    "threads": 2,
+    "padded_sequences": true
+  }
+]

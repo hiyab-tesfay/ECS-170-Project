@@ -1,7 +1,7 @@
 # ECS 170 Project
 
-Course project repository for ECS 170. The current code includes the Stage 1
-machine-learning template and the Stage 2 training and test datasets.
+Course project repository for ECS 170. This branch includes the Stage 1 and 2
+models and the Stage 4 recurrent text experiments.
 
 ## Project structure
 
@@ -14,8 +14,12 @@ script/stage_1_script/     Stage 1 executable scripts
 stage_2_data/              Stage 2 instructions and CSV datasets
 ```
 
-Stages 3 through 5 currently have package placeholders under `local_code/`.
-Stages 1 and 2 have executable model code.
+Stages 1, 2 and 4 have executable model code on this branch. Stage 5 has a
+package placeholder under `local_code/`.
+
+Stage 3 code and its CNN report are on the `stage3` branch. Stage 4 text
+classification and joke generation are on the `stage4` branch; see
+[the Stage 4 instructions](report/stage_4/REPRODUCE.md).
 
 ## Requirements
 

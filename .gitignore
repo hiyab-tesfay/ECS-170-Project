@@ -2,3 +2,10 @@
 .DS_Store
 __pycache__/
 *.pyc
+stage_4_data/
+result/stage_4_result/cache/
+result/stage_4_result/**/best.pt
+result/stage_4_result/**/last.pt
+result/stage_4_result/**/training.log
+tmp/
+report/stage_4/Stage_4_Submission.zip

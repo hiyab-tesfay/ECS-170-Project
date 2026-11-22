@@ -1,0 +1,24 @@
+{
+  "task": "generation",
+  "source_rows": 1622,
+  "unique_usable_rows": 1608,
+  "removed_duplicate_or_short_rows": 14,
+  "splits": {
+    "train": 1447,
+    "validation": 161
+  },
+  "seed": 42,
+  "vocabulary_size": 4467,
+  "max_length": 96,
+  "training_tokens": 26731,
+  "truncated_training_jokes": 0,
+  "validation_unknown_rate": 0.1072975674775075,
+  "glove": {
+    "matched": 4162,
+    "eligible": 4463,
+    "coverage": 0.9325565762939727,
+    "dimension": 50,
+    "source_filename": "glove.2024.wikigiga.50d.zip",
+    "sha256": "afa5e258ee38272db6394547c4b075ecbb7b2164e98542c8d1237b6029b35a65"
+  }
+}
