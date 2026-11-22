@@ -1,0 +1,21 @@
+{
+  "dataset": "MNIST training partition only",
+  "model": "baseline CNN",
+  "platform": "macOS-15.7.7-x86_64-i386-64bit",
+  "machine": "x86_64",
+  "pytorch": "2.2.2",
+  "samples": 1024,
+  "epochs": 2,
+  "batch_size": 128,
+  "cpu_threads": 2,
+  "seed": 42,
+  "cpu": {
+    "seconds": 0.8603,
+    "images": 2048,
+    "images_per_second": 2380.68
+  },
+  "gpu_device": null,
+  "gpu": null,
+  "interpretation": "Throughput comparison only; this is not a test accuracy result.",
+  "gpu_status": "Unavailable: CUDA and MPS are both unavailable on this machine."
+}
