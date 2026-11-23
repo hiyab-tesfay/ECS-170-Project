@@ -1,0 +1,10 @@
+{
+  "best_epoch": 16,
+  "best_validation_loss": 5.1220295451850095,
+  "epochs_run": 100,
+  "training_seconds": 475.86792045799666,
+  "parameters": 1686761,
+  "device": "cpu",
+  "validation_perplexity": 167.67532917975043,
+  "validation_token_accuracy": 0.28526249209361165
+}

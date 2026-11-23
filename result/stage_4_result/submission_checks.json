@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "best_test_accuracy": 0.90436,
+  "checks": [
+    "RNN classification metrics recomputed from all 25,000 predictions",
+    "LSTM classification metrics recomputed from all 25,000 predictions",
+    "GRU classification metrics recomputed from all 25,000 predictions",
+    "Additional embedding ablation accuracy recomputed from predictions",
+    "Train/validation/test manifests are disjoint",
+    "RNN generation trained; 72 decoded samples saved",
+    "LSTM generation trained; 72 decoded samples saved",
+    "GRU generation trained; 72 decoded samples saved",
+    "Report contains all required sections in 5 pages",
+    "Representative decoded output manually reviewed for each generator"
+  ]
+}

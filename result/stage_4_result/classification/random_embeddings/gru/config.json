@@ -1,0 +1,42 @@
+{
+  "task": "classification",
+  "model": {
+    "cell": "gru",
+    "embedding_dim": 50,
+    "hidden_size": 128,
+    "layers": 1,
+    "dropout": 0.4,
+    "bidirectional": true,
+    "freeze_embeddings": false
+  },
+  "epochs": 12,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "patience": 4,
+  "seed": 42,
+  "device": "cpu",
+  "weight_decay": 1e-05,
+  "gradient_clip": 1.0,
+  "optimizer": "Adam",
+  "checkpoint_selection": "minimum validation cross entropy",
+  "learning_rate_schedule": "validation plateau, patience 2, factor 0.5",
+  "initialization": "Xavier input/output; gate-wise orthogonal recurrent; zero bias; random N(0, 1) embeddings",
+  "python": "3.11.17",
+  "torch": "2.2.2",
+  "numpy": "1.26.4",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "threads": 2,
+  "parameters": 1139266,
+  "trainable_parameters": 1139266,
+  "embedding_source": "random",
+  "preprocessing": {
+    "seed": 42,
+    "max_length": 300,
+    "vocabulary_size": 20000,
+    "splits": {
+      "train": 22500,
+      "validation": 2500,
+      "test": 25000
+    }
+  }
+}

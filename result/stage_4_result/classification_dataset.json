@@ -1,0 +1,46 @@
+{
+  "task": "classification",
+  "vocabulary_size": 20000,
+  "seed": 42,
+  "max_length": 300,
+  "truncation": "head and tail",
+  "splits": {
+    "train": 22500,
+    "validation": 2500,
+    "test": 25000
+  },
+  "class_counts": {
+    "train": {
+      "0": 11250,
+      "1": 11250
+    },
+    "validation": {
+      "0": 1250,
+      "1": 1250
+    },
+    "test": {
+      "0": 12500,
+      "1": 12500
+    }
+  },
+  "unknown_token_rates": {
+    "train": 0.02264914141209485,
+    "validation": 0.025725059026676534,
+    "test": 0.02888316023682692
+  },
+  "median_training_length": 201.0,
+  "truncated_training_fraction": 0.28613333333333335,
+  "examples": {
+    "train": "when you're making a thriller about witchcraft , i believe you should do everything you can to help the audience suspend its disbelief in order for the movie to work . some pictures ( \" rosemary's baby \" , for example ) have accomplished this ; others ( like \" necromancy \" ) haven't and the potentially scary material comes",
+    "validation": "we have all been asking ourselves \" why don't they remake the slasher films that were only ok instead of remaking the ones that were great already , that way they can only make it better ? \" well with prom night they have remade the average but trashy fun 80s jamie lee curtis film and made it even worse",
+    "test": "once again mr . costner has dragged out a movie for far longer than necessary . aside from the terrific sea rescue sequences , of which there are very few i just did not care about any of the characters . most of us have ghosts in the closet , and costner's character are realized early on , and then"
+  },
+  "glove": {
+    "matched": 19335,
+    "eligible": 19996,
+    "coverage": 0.9669433886777355,
+    "dimension": 50,
+    "source_filename": "glove.2024.wikigiga.50d.zip",
+    "sha256": "afa5e258ee38272db6394547c4b075ecbb7b2164e98542c8d1237b6029b35a65"
+  }
+}

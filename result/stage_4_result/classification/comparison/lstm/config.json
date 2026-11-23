@@ -1,0 +1,49 @@
+{
+  "task": "classification",
+  "model": {
+    "cell": "lstm",
+    "embedding_dim": 50,
+    "hidden_size": 128,
+    "layers": 1,
+    "dropout": 0.4,
+    "bidirectional": true,
+    "freeze_embeddings": false
+  },
+  "epochs": 12,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "patience": 4,
+  "seed": 42,
+  "device": "mps",
+  "weight_decay": 1e-05,
+  "gradient_clip": 1.0,
+  "optimizer": "Adam",
+  "checkpoint_selection": "minimum validation cross entropy",
+  "learning_rate_schedule": "validation plateau, patience 2, factor 0.5",
+  "initialization": "Xavier input/output; gate-wise orthogonal recurrent; zero bias; pretrained GloVe embeddings",
+  "python": "3.11.17",
+  "torch": "2.2.2",
+  "numpy": "1.26.4",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "threads": 2,
+  "parameters": 1185346,
+  "trainable_parameters": 1185346,
+  "embedding_source": {
+    "matched": 19335,
+    "eligible": 19996,
+    "coverage": 0.9669433886777355,
+    "dimension": 50,
+    "source_filename": "glove.2024.wikigiga.50d.zip",
+    "sha256": "afa5e258ee38272db6394547c4b075ecbb7b2164e98542c8d1237b6029b35a65"
+  },
+  "preprocessing": {
+    "seed": 42,
+    "max_length": 300,
+    "vocabulary_size": 20000,
+    "splits": {
+      "train": 22500,
+      "validation": 2500,
+      "test": 25000
+    }
+  }
+}

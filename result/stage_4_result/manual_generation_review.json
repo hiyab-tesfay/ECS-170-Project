@@ -1,0 +1,104 @@
+{
+  "rnn": {
+    "readable_example_verified": true,
+    "checkpoint": "last.pt",
+    "sample": {
+      "prompt": "what did the",
+      "text": "What did the fish say when it swam into the wall? dam.",
+      "unknown_prompt_tokens": [],
+      "temperature": 0.5,
+      "top_k": 10,
+      "seed": 42,
+      "ended_with_eos": true,
+      "generated_tokens": 11,
+      "nearest_training_joke": "What did the fish say when it swam into the wall? Dam.",
+      "training_similarity": 1.0,
+      "exact_training_match": true,
+      "distinct_bigram_ratio": 1.0
+    },
+    "assessment": "Readable question and punchline with the requested opening and a natural stop. It reproduces a training joke exactly after token normalization, so it demonstrates learned completion and memorization rather than novel humor.",
+    "failure_sample": {
+      "prompt": "last night i",
+      "text": "Last night i run around the block 5 times. i think my laptop sound died too.",
+      "unknown_prompt_tokens": [],
+      "temperature": 0.5,
+      "top_k": 10,
+      "seed": 42,
+      "ended_with_eos": true,
+      "generated_tokens": 23,
+      "nearest_training_joke": "Every morning I run around the block 5 times... ...Then I slide the block back under the bed and go back to sleep",
+      "training_similarity": 0.3829787234042553,
+      "exact_training_match": false,
+      "distinct_bigram_ratio": 1.0
+    },
+    "failure_assessment": "The unfamiliar opening continues with grammatical and semantic errors; readable familiar completions do not imply reliable free-form generation."
+  },
+  "lstm": {
+    "readable_example_verified": true,
+    "checkpoint": "last.pt",
+    "sample": {
+      "prompt": "how do you",
+      "text": "How do you make a kleenex dance? you put a little boogie in it.",
+      "unknown_prompt_tokens": [],
+      "temperature": 0.5,
+      "top_k": 10,
+      "seed": 42,
+      "ended_with_eos": true,
+      "generated_tokens": 13,
+      "nearest_training_joke": "How do you make a kleenex dance? You put a little Boogie in it!",
+      "training_similarity": 0.9375,
+      "exact_training_match": false,
+      "distinct_bigram_ratio": 1.0
+    },
+    "assessment": "A readable, coherent question and answer with the expected dance/boogie wordplay. It closely reproduces a training joke with punctuation and capitalization differences; this supports learned completion but not a claim of novel joke creation.",
+    "failure_sample": {
+      "prompt": "why did the",
+      "text": "Why did the chicken cross the road naked? because a flows were to be a balance.",
+      "unknown_prompt_tokens": [],
+      "temperature": 0.8,
+      "top_k": 10,
+      "seed": 42,
+      "ended_with_eos": true,
+      "generated_tokens": 15,
+      "nearest_training_joke": "Why did the chicken cross the road? To show the opossum it could be done.",
+      "training_similarity": 0.6285714285714286,
+      "exact_training_match": false,
+      "distinct_bigram_ratio": 1.0
+    },
+    "failure_assessment": "This higher-temperature completion combines familiar setup words with an ungrammatical, semantically incoherent answer."
+  },
+  "gru": {
+    "readable_example_verified": true,
+    "checkpoint": "last.pt",
+    "sample": {
+      "prompt": "what do you",
+      "text": "What do you call a cow with no legs? ground beef.",
+      "unknown_prompt_tokens": [],
+      "temperature": 0.5,
+      "top_k": 10,
+      "seed": 43,
+      "ended_with_eos": true,
+      "generated_tokens": 10,
+      "nearest_training_joke": "What do you call a cow with no legs? Ground beef.",
+      "training_similarity": 1.0,
+      "exact_training_match": true,
+      "distinct_bigram_ratio": 1.0
+    },
+    "assessment": "The setup and punchline are complete, readable and semantically consistent with the ground-beef pun. It is an exact normalized training match, showing memorization of a familiar completion rather than a novel joke.",
+    "failure_sample": {
+      "prompt": "a man walks",
+      "text": "A man walks into a fancy dress party carrying a woman on his back. the host asks the man why is the man in the rabbit. \" oh, there is a tortoise and the other is a man. \"",
+      "unknown_prompt_tokens": [],
+      "temperature": 0.5,
+      "top_k": 10,
+      "seed": 42,
+      "ended_with_eos": true,
+      "generated_tokens": 42,
+      "nearest_training_joke": "A man walks into a fancy dress party carrying a woman on his back... The host asks the man why this is so. \"Oh, I'm a tortoise and this is Michelle\" says the man.",
+      "training_similarity": 0.7529411764705882,
+      "exact_training_match": false,
+      "distinct_bigram_ratio": 0.9047619047619048
+    },
+    "failure_assessment": "A longer narrative opening produces an initially plausible sentence, then loses grammatical and semantic coherence and fails to reproduce the original punchline."
+  }
+}
